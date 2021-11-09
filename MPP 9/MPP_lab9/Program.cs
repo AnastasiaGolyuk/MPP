@@ -6,11 +6,11 @@ namespace MPP_lab9
     {
         static void Main(string[] args)
         {
-            DynamicList<double> list = new DynamicList<double>(10, 0.75);
+            DynamicList<int> list = new DynamicList<int>(10, 0.75);
             Random rnd = new Random();
             for (int j = 0; j < 5; j++)
             {
-                list.Add(Math.Round(rnd.NextDouble(),1));
+                list.Add(rnd.Next(0,50));
             }
             list.Add(400);
             Console.WriteLine(list.ToString());
@@ -18,7 +18,7 @@ namespace MPP_lab9
             
             for (int j = 0; j < 10; j++)
             {
-                list.Add(Math.Round(rnd.NextDouble(),1));
+                list.Add(rnd.Next(0,50));
             }
             Console.WriteLine(list.ToString());
             Console.WriteLine("{0} {1}\n",list.Count, list.Capacity);
@@ -27,7 +27,7 @@ namespace MPP_lab9
             Console.WriteLine(list.ToString());
             Console.WriteLine("{0} {1} {2}\n",list.Count, list.Capacity,removed);
             
-            removed=list.Remove(10);
+            removed=list.Remove(-10);
             Console.WriteLine(list.ToString());
             Console.WriteLine("{0} {1} {2}\n",list.Count, list.Capacity,removed);
 
